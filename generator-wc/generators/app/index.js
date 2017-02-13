@@ -4,6 +4,7 @@ var chalk = require('chalk');
 var fs = require('fs');
 var yosay = require('yosay');
 var styleguide = require('../../../styleguide.json');
+var beautify = require("json-beautify");
 
 module.exports = Generator.extend({
   prompting: function () {
@@ -56,6 +57,6 @@ module.exports = Generator.extend({
       {wcClassName: className}
     );
 
-    fs.writeFile('styleguide.json', JSON.stringify(styleguide));
+    fs.writeFile('styleguide.json', beautify(styleguide, null, 4, 80));
   }
 });

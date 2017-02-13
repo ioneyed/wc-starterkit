@@ -1,1 +1,30 @@
-{"pageTitle":"Web Component Style Guide","pageDescription":"Description of the style guide.","elements":[{"name":"aris-toast","description":"Element to display a toast message.  Used when feedback needs to be given to the user.","examples":[{"title":"Basic Example","description":"When .peek() is called on the aris-toast element it will display a message to the user.","html":"<aris-toast>#newline##tab#Hello user!#newline#</aris-toast>","code":"<aris-toast>Hello user!</aris-toast><a onclick=\"document.querySelector('aris-toast').peek();\" href=\"javascript:void(0);\">Click to see toast.</a>"}]},{"name":"beacon-select","description":"A dropdown select specifically for allowing users to select what beacon they want to attach to a property or point of interest.","examples":[{"title":"Basic Example","description":"Put options that the user can choose inside beacon-select.","html":"<beacon-select>#newline##tab#<option>First</option>#newline##tab#<option>Second</option>#newline##tab#<option>Third</option>#newline#</beacon-select>","code":"<beacon-select><option>First</option><option>Second</option><option>Third</option></beacon-select>"}]}]}
+{
+    "pageTitle": "Web Component Style Guide",
+    "pageDescription": "Description of the style guide.",
+    "elements": [
+        {
+            "name": "aris-toast",
+            "description": "Element to display a toast message.  Used when feedback needs to be given to the user.",
+            "examples": [
+                {
+                    "title": "Basic Example",
+                    "description": "When .peek() is called on the aris-toast element it will display a message to the user.",
+                    "html": "<aris-toast>#newline##tab#Hello user!#newline#</aris-toast>",
+                    "code": "<aris-toast>Hello user!</aris-toast><a onclick=\"document.querySelector('aris-toast').peek();\" href=\"javascript:void(0);\">Click to see toast.</a>"
+                }
+            ]
+        },
+        {
+            "name": "beacon-select",
+            "description": "A dropdown select specifically for allowing users to select what beacon they want to attach to a property or point of interest.",
+            "examples": [
+                {
+                    "title": "Basic Example",
+                    "description": "Put options that the user can choose inside beacon-select.",
+                    "html": "<beacon-select>#newline##tab#<option>First</option>#newline##tab#<option>Second</option>#newline##tab#<option>Third</option>#newline#</beacon-select>",
+                    "code": "<beacon-select><option>First</option><option>Second</option><option>Third</option></beacon-select>"
+                }
+            ]
+        }
+    ]
+}
