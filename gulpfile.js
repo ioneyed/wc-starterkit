@@ -36,7 +36,12 @@ gulp.task("build-wc", ["build-polyfills"], function () {
 		.pipe(gulp.dest("dist/scripts"));
 });
 
-gulp.task("clean-up", ["build-wc"], function () {
+gulp.task("build-styleguide", ["build-wc"], function () {
+	return gulp.src(["styleguide.json"])
+		.pipe(gulp.dest("dist"));
+});
+
+gulp.task("clean-up", ["build-styleguide"], function () {
   	return del(['components/processing', "components/**/*.css"]);
 });
 
