@@ -1,0 +1,37 @@
+{
+  "name": "wc-starterkit",
+  "version": "0.1.0",
+  "description": "Web component starter kit and style guide creator.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-wc-sass": "node-sass components/**/*.scss -o processing",
+    "inject-html": "inject-files-cli components/**/*.html -o processing",
+    "inject-js": "inject-files-cli processing/*.js processing/*.js"
+  },
+  "keywords": [
+    "web",
+    "components",
+    "starter",
+    "kit",
+    "style",
+    "guide"
+  ],
+  "author": "Matt Shull",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-es2015": "^6.22.0",
+    "browser-sync": "^2.18.7",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-inject-file": "0.0.18",
+    "gulp-sass": "^3.1.0",
+    "inject-files-cli": "^1.0.7",
+    "node-sass": "^4.5.0",
+    "run-sequence": "^1.2.2"
+  }
+}
