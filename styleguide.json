@@ -20,15 +20,5 @@
 			"html": "<beacon-select>#newline##tab#<option>First</option>#newline##tab#<option>Second</option>#newline##tab#<option>Third</option>#newline#</beacon-select>",
 			"code": "<beacon-select><option>First</option><option>Second</option><option>Third</option></beacon-select>"
 		}]
-	},
-	{
-		"name": "pauls-element",
-		"description": "description text here",
-		"examples": [{
-			"title": "Basic Example",
-			"description": "example description",
-			"html": "<pauls-element>#newline##tab#<option>First</option>#newline##tab#<option>Second</option>#newline##tab#<option>Third</option>#newline#</pauls-element>",
-			"code": "N/A"
-		}]
 	}]
 }
