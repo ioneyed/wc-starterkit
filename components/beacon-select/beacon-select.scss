@@ -1,0 +1,63 @@
+/* https://kyusuf.com/post/completely-css-custom-checkbox-radio-buttons-and-select-boxes */
+:host {
+	display:block;
+	position:relative;
+}
+
+.select {
+	position: relative;
+	display: inline-block;
+	width:100%;
+	max-width: 225px;
+}
+
+.select select {
+	display: inline-block;
+	width: 100%;
+	padding: 6px 33px 6px 15px;
+	cursor: pointer;
+	color: #484848;
+	border: 1px solid lightgray;
+	border-radius: 25px;
+	background: #ffffff; /* Old browsers */
+	background: -webkit-linear-gradient(#ffffff 0%, #f6f6f6 47%, #efefef 100%);
+	background: -o-linear-gradient(#ffffff 0%, #f6f6f6 47%, #efefef 100%);
+	background: linear-gradient(#ffffff 0%, #f6f6f6 47%, #efefef 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 );
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	font-size:16px;
+}
+
+.select select::-ms-expand {
+	display: none;
+}
+
+.select select:hover,
+.select select:focus {
+	background: #efefef;
+}
+
+.select select:disabled {
+	pointer-events: none;
+	opacity: .5;
+}
+
+.select__arrow {
+	position: absolute;
+	top: 12px;
+	right: 18px;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+	border-width: 8px 5px 0 5px;
+	border-style: solid;
+	border-color: #484848 transparent transparent transparent;
+}
+
+.select select:disabled ~ .select__arrow {
+	border-top-color: #ccc;
+}:host {
+	
+}
