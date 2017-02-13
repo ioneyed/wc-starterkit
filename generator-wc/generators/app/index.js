@@ -1,7 +1,9 @@
 'use strict';
 var Generator = require('yeoman-generator');
 var chalk = require('chalk');
+var fs = require('fs');
 var yosay = require('yosay');
+var styleguide = require('../../../styleguide.json');
 
 module.exports = Generator.extend({
   prompting: function () {
@@ -17,8 +19,8 @@ module.exports = Generator.extend({
     },
     {
       type: 'input',
-      name: 'wcClassName',
-      message: 'What is the camel-case class name of this web component?'
+      name: 'wcDescription',
+      message: 'What is the description of this web component?'
     }];
 
     return this.prompt(prompts).then(function (props) {
@@ -28,21 +30,32 @@ module.exports = Generator.extend({
   },
 
   writing: function () {
+    var elementName = this.props.wcElementName;
+
+    var firstPart = elementName.substr(0, elementName.indexOf("-"));
+    var lastPart = elementName.substr(elementName.indexOf("-") + 1);
+    lastPart = lastPart.charAt(0).toUpperCase() + lastPart.slice(1);
+    var className = firstPart+lastPart;
+
+    styleguide.elements.push({name: elementName, description: this.props.wcDescription, examples:[]});
+
     this.fs.copyTpl(
       this.templatePath('template.scss'),
-      this.destinationPath("components/"+this.props.wcElementName+"/"+this.props.wcElementName+".scss")
+      this.destinationPath("components/"+elementName+"/"+elementName+".scss")
     );
 
     this.fs.copyTpl(
       this.templatePath('template.js'),
-      this.destinationPath("components/"+this.props.wcElementName+"/"+this.props.wcElementName+".js"),
-      {wcElementName:this.props.wcElementName, wcClassName: this.props.wcClassName}
+      this.destinationPath("components/"+elementName+"/"+elementName+".js"),
+      {wcElementName:elementName, wcClassName: className}
     );
 
     this.fs.copyTpl(
       this.templatePath('template.html'),
-      this.destinationPath("components/"+this.props.wcElementName+"/"+this.props.wcElementName+".html"),
-      {wcClassName: this.props.wcClassName}
+      this.destinationPath("components/"+elementName+"/"+elementName+".html"),
+      {wcClassName: className}
     );
+
+    fs.writeFile('styleguide.json', JSON.stringify(styleguide));
   }
 });

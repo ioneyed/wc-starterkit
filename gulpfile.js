@@ -72,5 +72,5 @@ gulp.task('browserSync', function() {
 });
 
 gulp.task('watch', ['browserSync', 'build'], function (){
-    gulp.watch(['javascript/**/*.js', '!components/processing/*', 'components/**/*.scss', 'components/**/*.js', 'dist/index.html', 'dist/**/*.css', 'dist/styleguide.json'], ['build']);
+    gulp.watch(['javascript/**/*.js', '!components/processing/*', 'components/**/*.scss', 'components/**/*.js', 'dist/index.html', 'dist/**/*.css', 'styleguide.json'], ['build']);
 });
