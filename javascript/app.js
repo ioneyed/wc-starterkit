@@ -3,7 +3,7 @@
 		return JSON.parse(localStorage.getItem("json"));
 	}
 
-	arisHelper.getJSON("styleguide.json").then(function(json) {
+	arisHelper.getJSON("./styleguide.json").then(function(json) {
 		//console.log(json);
 		localStorage.setItem("json", JSON.stringify(json));
 
